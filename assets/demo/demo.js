@@ -316,6 +316,54 @@ demo = {
       }
     };
 
+    gradientPieChartPercentConfiguration = {
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      },
+
+      tooltips: {
+        backgroundColor: '#f5f5f5',
+        titleFontColor: '#333',
+        bodyFontColor: '#666',
+        bodySpacing: 4,
+        xPadding: 12,
+        mode: "nearest",
+        intersect: 0,
+        position: "nearest"
+      },
+      responsive: true,
+      scales: {
+        yAxes: [{
+          display:false
+          /*gridLines: {
+            drawBorder: false,
+            color: 'rgba(29,140,248,0.1)',
+            zeroLineColor: "transparent",
+          },
+          ticks: {
+            suggestedMin: 0,
+            suggestedMax: 100,
+            padding: 20,
+            fontColor: "#9e9e9e"
+          }*/
+        }],
+
+        xAxes: [{
+
+          gridLines: {
+            drawBorder: false,
+            color: 'rgba(29,140,248,0.1)',
+            zeroLineColor: "transparent",
+          },
+          ticks: {
+            padding: 20,
+            fontColor: "#9e9e9e"
+          }
+        }]
+      }
+    };
+
     gradientPieChartConfiguration = {
       maintainAspectRatio: false,
       legend: {
@@ -438,7 +486,7 @@ demo = {
           data: [33, 12, 8, 13, 8, 14, 12],
         }]
       },
-      options: gradientPieChartConfiguration
+      options: gradientPieChartPercentConfiguration
     });
     /* End of Function Chart */
 
@@ -505,11 +553,11 @@ demo = {
           data: [44, 34, 19, 3],
         }]
       },
-      options: gradientPieChartConfiguration
+      options: gradientPieChartPercentConfiguration
     });
     /* End of Country Chart */
 
-    /* Remote Work Experience Chart */
+    /* Remote Work Experience Chart 
     var ctx = document.getElementById("RemoteWorkExperienceChart").getContext("2d");
 
     var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
