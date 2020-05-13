@@ -403,7 +403,7 @@ demo = {
       data: {
         labels: chart_labels,
         datasets: [{
-          label: "My First dataset",
+          label: "No. of forms filled",
           fill: true,
           backgroundColor: gradientStroke,
           borderColor: '#d346b1',
