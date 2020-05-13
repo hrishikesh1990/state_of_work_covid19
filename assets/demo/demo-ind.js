@@ -570,6 +570,40 @@ demo = {
       options: gradientBarChartPercentConfiguration
     });
     /* End of Work Hours Chart */
+
+    /* Most Challenging Chart */
+    var ctx = document.getElementById("MostChallengingChart").getContext("2d");
+
+    var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke.addColorStop(1, 'rgba(72,72,176,0.1)');
+    gradientStroke.addColorStop(0.4, 'rgba(72,72,176,0.0)');
+    gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
+
+
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      responsive: true,
+      legend: {
+        display: false
+      },
+      data: {
+        labels: ['Work-life Balance 👨🏻‍💻-👫', 'Infrastructure Problems 💻', 'Distractions 🎮 🎼 🤹‍♀️', 'Poor team coordination 🤔', 'Productivity 🏃‍♂️'],
+        datasets: [{
+          label: "Respondents",
+          fill: true,
+          backgroundColor: gradientStroke,
+          hoverBackgroundColor: gradientStroke,
+          borderColor: '#d346b1',
+          borderWidth: 2,
+          borderDash: [],
+          borderDashOffset: 0.0,
+          data: [33, 22, 17, 15, 12],
+        }]
+      },
+      options: gradientBarChartPercentConfiguration
+    });
+    /* End of Most Challenging Chart */
   },
 
   showNotification: function(from, align) {
