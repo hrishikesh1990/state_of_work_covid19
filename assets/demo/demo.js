@@ -71,29 +71,6 @@ demo = {
         }
       }
     };
-
-    myChart = new Chart(ctx, {
-      type: 'line',
-      responsive: true,
-      data: {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-          label: "Active Users",
-          borderColor: "#f96332",
-          pointBorderColor: "#FFF",
-          pointBackgroundColor: "#f96332",
-          pointBorderWidth: 2,
-          pointHoverRadius: 4,
-          pointHoverBorderWidth: 1,
-          pointRadius: 4,
-          fill: true,
-          backgroundColor: gradientFill,
-          borderWidth: 2,
-          data: [542, 480, 430, 550, 530, 453, 380, 434, 568, 610, 700, 630]
-        }]
-      },
-      options: gradientChartOptionsConfiguration
-    });
   },
 
   initDashboardPageCharts: function() {
@@ -339,7 +316,55 @@ demo = {
       }
     };
 
+    gradientPieChartConfiguration = {
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      },
 
+      tooltips: {
+        backgroundColor: '#f5f5f5',
+        titleFontColor: '#333',
+        bodyFontColor: '#666',
+        bodySpacing: 4,
+        xPadding: 12,
+        mode: "nearest",
+        intersect: 0,
+        position: "nearest"
+      },
+      responsive: true,
+      scales: {
+        yAxes: [{
+
+          gridLines: {
+            drawBorder: false,
+            color: 'rgba(29,140,248,0.1)',
+            zeroLineColor: "transparent",
+          },
+          ticks: {
+            suggestedMin: 0,
+            suggestedMax: 100,
+            padding: 20,
+            fontColor: "#9e9e9e"
+          }
+        }],
+
+        xAxes: [{
+
+          gridLines: {
+            drawBorder: false,
+            color: 'rgba(29,140,248,0.1)',
+            zeroLineColor: "transparent",
+          },
+          ticks: {
+            padding: 20,
+            fontColor: "#9e9e9e"
+          }
+        }]
+      }
+    };
+
+    /* Function Chart */
     var ctx = document.getElementById("FunctionChart").getContext("2d");
 
     var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
@@ -356,9 +381,8 @@ demo = {
         display: false
       },
       data: {
-        labels: ['Engineering', 'Finance', 'HR', 'Management', 'Marketing', 'Product', 'Sales', 'Strategy'],
+        labels: ['Engineering', 'Product', 'Management', 'Sales', 'Finance', 'Strategy', 'Marketing'],
         datasets: [{
-          label: "Respondents",
           fill: true,
           backgroundColor: gradientStroke,
           hoverBackgroundColor: gradientStroke,
@@ -366,12 +390,14 @@ demo = {
           borderWidth: 2,
           borderDash: [],
           borderDashOffset: 0.0,
-          data: [96, 19, 2, 23, 14, 33, 20, 16],
+          data: [33, 12, 8, 13, 8, 14, 12],
         }]
       },
-      options: gradientBarChartConfiguration
+      options: gradientPieChartConfiguration
     });
+    /* End of Function Chart */
 
+    /* Company Size Chart */
     var ctx = document.getElementById("CompanySizeChart").getContext("2d");
 
     var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
@@ -398,12 +424,14 @@ demo = {
           borderWidth: 2,
           borderDash: [],
           borderDashOffset: 0.0,
-          data: [26, 26, 15, 16, 140],
+          data: [107, 169, 152, 71, 392],
         }]
       },
       options: gradientBarChartConfiguration
     });
+    /* End of Company Size Chart */
 
+    /* Country Chart */
     var ctx = document.getElementById("CountryChart").getContext("2d");
 
     var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
@@ -420,9 +448,8 @@ demo = {
         display: false
       },
       data: {
-        labels: ['US', 'UK', 'India', 'France', 'Sweden'],
+        labels: ['Asia', 'North America', 'Europe', 'Africa', 'Sweden'],
         datasets: [{
-          label: "Respondents",
           fill: true,
           backgroundColor: gradientStroke,
           hoverBackgroundColor: gradientStroke,
@@ -430,12 +457,14 @@ demo = {
           borderWidth: 2,
           borderDash: [],
           borderDashOffset: 0.0,
-          data: [26, 26, 15, 16, 140],
+          data: [44, 34, 19, 3],
         }]
       },
-      options: gradientBarChartConfiguration
+      options: gradientPieChartConfiguration
     });
+    /* End of Country Chart */
 
+    /* Remote Work Experience Chart */
     var ctx = document.getElementById("RemoteWorkExperienceChart").getContext("2d");
 
     var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
@@ -468,6 +497,8 @@ demo = {
       options: gradientBarChartConfiguration
     });
 
+    /* End of Remote Work Experience Chart */
+
   },
 
   showNotification: function(from, align) {
@@ -475,7 +506,7 @@ demo = {
 
     $.notify({
       icon: "tim-icons icon-bell-55",
-      message: "Welcome to <b>Black Dashboard</b> - a beautiful freebie for every web developer."
+      message: "Welcome to State of Work - COVID19."
 
     }, {
       type: type[color],
