@@ -364,6 +364,54 @@ demo = {
       }
     };
 
+    gradientBarChartPercentConfigurationMax60 = {
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      },
+
+      tooltips: {
+        backgroundColor: '#f5f5f5',
+        titleFontColor: '#333',
+        bodyFontColor: '#666',
+        bodySpacing: 4,
+        xPadding: 12,
+        mode: "nearest",
+        intersect: 0,
+        position: "nearest"
+      },
+      responsive: true,
+      scales: {
+        yAxes: [{
+
+          gridLines: {
+            drawBorder: false,
+            color: 'rgba(29,140,248,0.1)',
+            zeroLineColor: "transparent",
+          },
+          ticks: {
+            suggestedMin: 0,
+            suggestedMax: 60,
+            padding: 20,
+            fontColor: "#9e9e9e"
+          }
+        }],
+
+        xAxes: [{
+
+          gridLines: {
+            drawBorder: false,
+            color: 'rgba(29,140,248,0.1)',
+            zeroLineColor: "transparent",
+          },
+          ticks: {
+            padding: 20,
+            fontColor: "#9e9e9e"
+          }
+        }]
+      }
+    };
+
     gradientPieChartPercentConfiguration = {
       maintainAspectRatio: false,
       legend: {
@@ -567,7 +615,7 @@ demo = {
           data: [32, 25, 23, 20],
         }]
       },
-      options: gradientBarChartPercentConfiguration
+      options: gradientBarChartPercentConfigurationMax60
     });
     /* End of Work Hours Chart */
 
@@ -601,7 +649,7 @@ demo = {
           data: [33, 22, 17, 15, 12],
         }]
       },
-      options: gradientBarChartPercentConfiguration
+      options: gradientBarChartPercentConfigurationMax60
     });
     /* End of Most Challenging Chart */
   },
