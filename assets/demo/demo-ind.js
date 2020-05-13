@@ -316,6 +316,54 @@ demo = {
       }
     };
 
+    gradientBarChartPercentConfiguration = {
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      },
+
+      tooltips: {
+        backgroundColor: '#f5f5f5',
+        titleFontColor: '#333',
+        bodyFontColor: '#666',
+        bodySpacing: 4,
+        xPadding: 12,
+        mode: "nearest",
+        intersect: 0,
+        position: "nearest"
+      },
+      responsive: true,
+      scales: {
+        yAxes: [{
+
+          gridLines: {
+            drawBorder: false,
+            color: 'rgba(29,140,248,0.1)',
+            zeroLineColor: "transparent",
+          },
+          ticks: {
+            suggestedMin: 0,
+            suggestedMax: 100,
+            padding: 20,
+            fontColor: "#9e9e9e"
+          }
+        }],
+
+        xAxes: [{
+
+          gridLines: {
+            drawBorder: false,
+            color: 'rgba(29,140,248,0.1)',
+            zeroLineColor: "transparent",
+          },
+          ticks: {
+            padding: 20,
+            fontColor: "#9e9e9e"
+          }
+        }]
+      }
+    };
+
     gradientPieChartPercentConfiguration = {
       maintainAspectRatio: false,
       legend: {
@@ -385,147 +433,7 @@ demo = {
       }
     };
 
-    /* Progress Chart */
-    var chart_labels = ['24-Apr-2020', '25-Apr-2020', '26-Apr-2020', '27-Apr-2020', '28-Apr-2020', '29-Apr-2020', '30-Apr-2020', '1-May-2020', '2-May-2020', '8-May-2020', '10-May-2020'];
-    var chart_data = [28,400,32,192,52,116,36,8,16,8,4];
-
-
-    var ctx = document.getElementById("ProgressChart").getContext('2d');
-
-    var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
-
-    gradientStroke.addColorStop(1, 'rgba(72,72,176,0.1)');
-    gradientStroke.addColorStop(0.4, 'rgba(72,72,176,0.0)');
-    gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
-
-    var config = {
-      type: 'line',
-      data: {
-        labels: chart_labels,
-        datasets: [{
-          label: "My First dataset",
-          fill: true,
-          backgroundColor: gradientStroke,
-          borderColor: '#d346b1',
-          borderWidth: 2,
-          borderDash: [],
-          borderDashOffset: 0.0,
-          pointBackgroundColor: '#d346b1',
-          pointBorderColor: 'rgba(255,255,255,0)',
-          pointHoverBackgroundColor: '#d346b1',
-          pointBorderWidth: 20,
-          pointHoverRadius: 4,
-          pointHoverBorderWidth: 15,
-          pointRadius: 4,
-          data: chart_data,
-        }]
-      },
-      options: gradientChartOptionsConfigurationWithTooltipPurple
-    };
-    var myChartData = new Chart(ctx, config);
-    $("#0").click(function() {
-      var data = myChartData.config.data;
-      data.datasets[0].data = chart_data;
-      data.labels = chart_labels;
-      myChartData.update();
-    });
-    /* End of Progress Chart */
-
-    /* Function Chart */
-    var ctx = document.getElementById("FunctionChart").getContext("2d");
-
-    var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
-
-    gradientStroke.addColorStop(1, 'rgba(29,140,248,0.2)');
-    gradientStroke.addColorStop(0.4, 'rgba(29,140,248,0.0)');
-    gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
-
-
-    var myChart = new Chart(ctx, {
-      type: 'pie',
-      responsive: true,
-      data: {
-        labels: ['Engineering', 'Product', 'Management', 'Sales', 'Finance', 'Strategy', 'Marketing'],
-        datasets: [{
-          fill: true,
-          backgroundColor: ['rgba(29,140,248,1)', 'rgba(29,140,248,0.8)', 'rgba(29,140,248,0.6)', 'rgba(29,140,248,0.4)', 'rgba(29,140,248,0.2)', 'rgba(29,140,248,0.1)', 'rgba(29,140,248,0)'],
-          hoverBackgroundColor: gradientStroke,
-          borderColor: '#1f8ef1',
-          borderWidth: 2,
-          borderDash: [],
-          borderDashOffset: 0.0,
-          data: [33, 12, 8, 13, 8, 14, 12],
-        }]
-      },
-      options: gradientPieChartPercentConfiguration
-    });
-    /* End of Function Chart */
-
-    /* Company Size Chart */
-    var ctx = document.getElementById("CompanySizeChart").getContext("2d");
-
-    var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
-
-    gradientStroke.addColorStop(1, 'rgba(72,72,176,0.1)');
-    gradientStroke.addColorStop(0.4, 'rgba(72,72,176,0.0)');
-    gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
-
-
-    var myChart = new Chart(ctx, {
-      type: 'bar',
-      responsive: true,
-      legend: {
-        display: false
-      },
-      data: {
-        labels: ['0-10', '11-50', '51-200', '201-500', '500+'],
-        datasets: [{
-          label: "Respondents",
-          fill: true,
-          backgroundColor: gradientStroke,
-          hoverBackgroundColor: gradientStroke,
-          borderColor: '#d346b1',
-          borderWidth: 2,
-          borderDash: [],
-          borderDashOffset: 0.0,
-          data: [107, 169, 152, 71, 392],
-        }]
-      },
-      options: gradientBarChartConfiguration
-    });
-    /* End of Company Size Chart */
-
-    /* Country Chart */
-    var ctx = document.getElementById("CountryChart").getContext("2d");
-
-    var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
-
-    gradientStroke.addColorStop(1, 'rgba(29,140,248,0.2)');
-    gradientStroke.addColorStop(0.4, 'rgba(29,140,248,0.0)');
-    gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
-
-
-    var myChart = new Chart(ctx, {
-      type: 'pie',
-      responsive: true,
-      data: {
-        labels: ['Asia', 'North America', 'Europe', 'Africa'],
-        datasets: [{
-          fill: true,
-          backgroundColor: ['rgba(29,140,248,1)', 'rgba(29,140,248,0.7)', 'rgba(29,140,248,0.4)', 'rgba(29,140,248,0.1)'],
-          hoverBackgroundColor: gradientStroke,
-          borderColor: '#1f8ef1',
-          borderWidth: 2,
-          borderDash: [],
-          borderDashOffset: 0.0,
-          data: [44, 34, 19, 3],
-        }]
-      },
-      options: gradientPieChartPercentConfiguration
-    });
-    /* End of Country Chart */
-
-    /* Remote Work Experience Chart
+    /* Remote Work Experience Chart */
     var ctx = document.getElementById("RemoteWorkExperienceChart").getContext("2d");
 
     var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
@@ -536,7 +444,7 @@ demo = {
 
 
     var myChart = new Chart(ctx, {
-      type: 'bar',
+      type: 'pie',
       responsive: true,
       legend: {
         display: false
@@ -546,20 +454,122 @@ demo = {
         datasets: [{
           label: "Respondents",
           fill: true,
-          backgroundColor: gradientStroke,
+          backgroundColor: ['rgba(29,140,248,1)', 'rgba(29,140,248,0.5)'],
           hoverBackgroundColor: gradientStroke,
           borderColor: '#1f8ef1',
           borderWidth: 2,
           borderDash: [],
           borderDashOffset: 0.0,
-          data: [121, 102],
+          data: [54, 46],
         }]
       },
-      options: gradientBarChartConfiguration
+      options: gradientPieChartPercentConfiguration
     });
 
     /* End of Remote Work Experience Chart */
 
+    /* Enjoy RW Chart */
+    var ctx = document.getElementById("EnjoyRWChart").getContext("2d");
+
+    var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke.addColorStop(1, 'rgba(72,72,176,0.1)');
+    gradientStroke.addColorStop(0.4, 'rgba(72,72,176,0.0)');
+    gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
+
+
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      responsive: true,
+      legend: {
+        display: false
+      },
+      data: {
+        labels: ['In-office & WFH 🤙', 'Status quo 👍', 'Nope 👎'],
+        datasets: [{
+          label: "Respondents",
+          fill: true,
+          backgroundColor: gradientStroke,
+          hoverBackgroundColor: gradientStroke,
+          borderColor: '#d346b1',
+          borderWidth: 2,
+          borderDash: [],
+          borderDashOffset: 0.0,
+          data: [67, 20, 13],
+        }]
+      },
+      options: gradientBarChartPercentConfiguration
+    });
+    /* End of Enjoy RW Chart */
+
+    /* Productivity Comparison Chart */
+    var ctx = document.getElementById("ProductivityComparisonChart").getContext("2d");
+
+    var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke.addColorStop(1, 'rgba(29,140,248,0.2)');
+    gradientStroke.addColorStop(0.4, 'rgba(29,140,248,0.0)');
+    gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
+
+
+    var myChart = new Chart(ctx, {
+      type: 'pie',
+      responsive: true,
+      legend: {
+        display: false
+      },
+      data: {
+        labels: ['It varies from day to day 🤔', 'It has been more or less the same 🤙', 'It has been consistently more 📈', 'It has been pretty poor overall 📉'],
+        datasets: [{
+          label: "Respondents",
+          fill: true,
+          backgroundColor: ['rgba(29,140,248,1)', 'rgba(29,140,248,0.7)', 'rgba(29,140,248,0.4)', 'rgba(29,140,248,0.1)'],
+          hoverBackgroundColor: gradientStroke,
+          borderColor: '#1f8ef1',
+          borderWidth: 2,
+          borderDash: [],
+          borderDashOffset: 0.0,
+          data: [34,33,19,14],
+        }]
+      },
+      options: gradientPieChartPercentConfiguration
+    });
+
+    /* End of Productivity Comparison Chart */
+
+    /* Work Hours Chart */
+    var ctx = document.getElementById("WorkHoursChart").getContext("2d");
+
+    var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke.addColorStop(1, 'rgba(72,72,176,0.1)');
+    gradientStroke.addColorStop(0.4, 'rgba(72,72,176,0.0)');
+    gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
+
+
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      responsive: true,
+      legend: {
+        display: false
+      },
+      data: {
+        labels: ['More 😕', 'Varies 🤔', 'Same 🤙', 'Lesser 😀'],
+        datasets: [{
+          label: "Respondents",
+          fill: true,
+          backgroundColor: gradientStroke,
+          hoverBackgroundColor: gradientStroke,
+          borderColor: '#d346b1',
+          borderWidth: 2,
+          borderDash: [],
+          borderDashOffset: 0.0,
+          data: [32, 25, 23, 20],
+        }]
+      },
+      options: gradientBarChartPercentConfiguration
+    });
+    /* End of Work Hours Chart */
   },
 
   showNotification: function(from, align) {
