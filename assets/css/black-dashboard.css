@@ -17015,7 +17015,7 @@ table.tablesorter thead tr .headerSortDown {
   z-index: 10000;
   border-radius: 8px 0 0 8px;
   text-align: center;
-  top: 20px;
+  top: 40px;
 }
 
 .fixed-plugin li>a,
