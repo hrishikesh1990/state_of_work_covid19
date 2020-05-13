@@ -364,6 +364,51 @@ demo = {
       }
     };
 
+    /* Progress Chart */
+    var chart_labels = ['24-Apr-2020', '25-Apr-2020', '26-Apr-2020', '27-Apr-2020', '28-Apr-2020', '29-Apr-2020', '30-Apr-2020', '1-May-2020', '2-May-2020', '8-May-2020', '10-May-2020'];
+    var chart_data = [28,400,32,192,52,116,36,8,16,8,4];
+
+
+    var ctx = document.getElementById("ProgressChart").getContext('2d');
+
+    var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke.addColorStop(1, 'rgba(72,72,176,0.1)');
+    gradientStroke.addColorStop(0.4, 'rgba(72,72,176,0.0)');
+    gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
+    var config = {
+      type: 'line',
+      data: {
+        labels: chart_labels,
+        datasets: [{
+          label: "My First dataset",
+          fill: true,
+          backgroundColor: gradientStroke,
+          borderColor: '#d346b1',
+          borderWidth: 2,
+          borderDash: [],
+          borderDashOffset: 0.0,
+          pointBackgroundColor: '#d346b1',
+          pointBorderColor: 'rgba(255,255,255,0)',
+          pointHoverBackgroundColor: '#d346b1',
+          pointBorderWidth: 20,
+          pointHoverRadius: 4,
+          pointHoverBorderWidth: 15,
+          pointRadius: 4,
+          data: chart_data,
+        }]
+      },
+      options: gradientChartOptionsConfigurationWithTooltipPurple
+    };
+    var myChartData = new Chart(ctx, config);
+    $("#0").click(function() {
+      var data = myChartData.config.data;
+      data.datasets[0].data = chart_data;
+      data.labels = chart_labels;
+      myChartData.update();
+    });
+    /* End of Progress Chart */
+
     /* Function Chart */
     var ctx = document.getElementById("FunctionChart").getContext("2d");
 

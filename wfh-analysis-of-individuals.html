@@ -28,8 +28,8 @@
     -->
       <div class="sidebar-wrapper">
         <div class="logo">
-          <a href="https://remoteclan.com" class="simple-text logo-normal">
-            &nbsp;Remote Clan
+          <a href="#" class="simple-text logo-normal">
+            Dashboard
           </a>
         </div>
         <ul class="nav">
@@ -39,24 +39,24 @@
               <p>Aim of the survey</p>
             </a>
           </li>
-        </ul>
-        <ul class="nav">
           <li class="active ">
-            <a href="./respondents.html">
+            <a href="./survey.html">
               <i class="tim-icons icon-chart-pie-36"></i>
-              <p>Who filled the Survey?</p>
+              <p>Our survey</p>
             </a>
           </li>
-        </ul>
-        <ul class="nav">
           <li class="active ">
-            <a href="./wfh-analysis-of-companies.html">
+            <a href="./who-took-the-survey.html">
+              <i class="tim-icons icon-chart-pie-36"></i>
+              <p>Who took the Survey?</p>
+            </a>
+          </li>
+          <li class="active ">
+            <a href="./wfh-analysis-of-individuals.html">
               <i class="tim-icons icon-chart-pie-36"></i>
               <p>WFH analysis of Individuals</p>
             </a>
           </li>
-        </ul>
-        <ul class="nav">
           <li class="active ">
             <a href="./wfh-analysis-of-companies.html">
               <i class="tim-icons icon-chart-pie-36"></i>
@@ -78,9 +78,9 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:void(0)">State of Work - COVID19</a>
+            <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
           </div>
-          <!--<div class="collapse navbar-collapse" id="navigation">
+          <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav ml-auto">
               <li class="search-bar input-group">
                 <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split" ></i>
@@ -89,7 +89,7 @@
               </li>
               <li class="separator d-lg-none"></li>
             </ul>
-          </div>-->
+          </div>
         </div>
       </nav>
       <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
@@ -107,11 +107,40 @@
       <!-- End Navbar -->
       <div class="content">
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-12">
+            <div class="card card-chart">
+              <div class="card-header ">
+                <div class="row">
+                  <div class="col-sm-6 text-left">
+                    <h2 class="card-category" style="font-size: 1.25rem;">Progress of the survey</h2>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                      <label class="btn btn-sm btn-primary btn-simple active" id="0">
+                        <input type="radio" name="options" checked>
+                        <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">No. of forms filled</span>
+                        <span class="d-block d-sm-none">
+                          <i class="tim-icons icon-single-02"></i>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="chart-area">
+                  <canvas id="ProgressChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
             <div class="card card-chart">
               <div class="card-header">
-                <h2 class="card-category">Country</h2>
-                <!--<h3 class="card-title"><i class="tim-icons icon-delivery-fast text-info"></i> 3,500€</h3>-->
+                <h3 class="card-category" style="font-size: 1.25rem;">Distribution by Geography</h3>
+                <h5 class="card-title"><i class="tim-icons icon-bell-55 text-primary"></i> Majority were from Asia and North America</h5><br>
               </div>
               <div class="card-body">
                 <div class="chart-area">
@@ -120,26 +149,11 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-4">
             <div class="card card-chart">
               <div class="card-header">
-                <h2 class="card-category">Previous Remote Work Experience</h2>
-                <!--<h3 class="card-title"><i class="tim-icons icon-delivery-fast text-info"></i> 3,500€</h3>-->
-              </div>
-              <div class="card-body">
-                <div class="chart-area">
-                  <canvas id="RemoteWorkExperienceChart"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="card card-chart">
-              <div class="card-header">
-                <h2 class="card-category">Company Size</h2>
-                <!--<h3 class="card-title"><i class="tim-icons icon-delivery-fast text-info"></i> 3,500€</h3>-->
+                <h3 class="card-category" style="font-size: 1.25rem;">Distribution by Company Size</h3>
+                <h5 class="card-title"><i class="tim-icons icon-delivery-fast text-info"></i>A good mix of startups (48%) and large companies (44%)</h5>
               </div>
               <div class="card-body">
                 <div class="chart-area">
@@ -148,11 +162,11 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-4">
             <div class="card card-chart">
               <div class="card-header">
-                <h2 class="card-category">Function</h2>
-                <!--<h3 class="card-title"><i class="tim-icons icon-delivery-fast text-info"></i> 3,500€</h3>-->
+                <h3 class="card-category" style="font-size: 1.25rem;">Distribution by Function</h3>
+                <h3 class="card-title"><i class="tim-icons icon-send text-success"></i> 12,100K</h3>
               </div>
               <div class="card-body">
                 <div class="chart-area">
