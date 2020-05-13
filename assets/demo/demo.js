@@ -319,7 +319,9 @@ demo = {
     gradientPieChartPercentConfiguration = {
       maintainAspectRatio: false,
       legend: {
-        display: false
+        display: true,
+        position: 'bottom',
+        align: 'left'
       },
 
       tooltips: {
@@ -332,36 +334,7 @@ demo = {
         intersect: 0,
         position: "nearest"
       },
-      responsive: true,
-      scales: {
-        yAxes: [{
-          display:false
-          /*gridLines: {
-            drawBorder: false,
-            color: 'rgba(29,140,248,0.1)',
-            zeroLineColor: "transparent",
-          },
-          ticks: {
-            suggestedMin: 0,
-            suggestedMax: 100,
-            padding: 20,
-            fontColor: "#9e9e9e"
-          }*/
-        }],
-
-        xAxes: [{
-
-          gridLines: {
-            drawBorder: false,
-            color: 'rgba(29,140,248,0.1)',
-            zeroLineColor: "transparent",
-          },
-          ticks: {
-            padding: 20,
-            fontColor: "#9e9e9e"
-          }
-        }]
-      }
+      responsive: true
     };
 
     gradientPieChartConfiguration = {
@@ -470,14 +443,11 @@ demo = {
     var myChart = new Chart(ctx, {
       type: 'pie',
       responsive: true,
-      legend: {
-        display: false
-      },
       data: {
         labels: ['Engineering', 'Product', 'Management', 'Sales', 'Finance', 'Strategy', 'Marketing'],
         datasets: [{
           fill: true,
-          backgroundColor: gradientStroke,
+          backgroundColor: ['rgba(29,140,248,1)', 'rgba(29,140,248,0.8)', 'rgba(29,140,248,0.6)', 'rgba(29,140,248,0.4)', 'rgba(29,140,248,0.2)', 'rgba(29,140,248,0.1)', 'rgba(29,140,248,0)'],
           hoverBackgroundColor: gradientStroke,
           borderColor: '#1f8ef1',
           borderWidth: 2,
@@ -537,14 +507,11 @@ demo = {
     var myChart = new Chart(ctx, {
       type: 'pie',
       responsive: true,
-      legend: {
-        display: false
-      },
       data: {
-        labels: ['Asia', 'North America', 'Europe', 'Africa', 'Sweden'],
+        labels: ['Asia', 'North America', 'Europe', 'Africa'],
         datasets: [{
           fill: true,
-          backgroundColor: gradientStroke,
+          backgroundColor: ['rgba(29,140,248,1)', 'rgba(29,140,248,0.7)', 'rgba(29,140,248,0.4)', 'rgba(29,140,248,0.1)'],
           hoverBackgroundColor: gradientStroke,
           borderColor: '#1f8ef1',
           borderWidth: 2,
@@ -557,7 +524,7 @@ demo = {
     });
     /* End of Country Chart */
 
-    /* Remote Work Experience Chart 
+    /* Remote Work Experience Chart
     var ctx = document.getElementById("RemoteWorkExperienceChart").getContext("2d");
 
     var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
