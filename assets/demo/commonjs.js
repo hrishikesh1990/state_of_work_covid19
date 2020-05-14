@@ -1,5 +1,6 @@
   $(document).ready(function() {
     $().ready(function() {
+      console.log(localStorage['color']);
       $sidebar = $('.sidebar');
       $navbar = $('.navbar');
       $main_panel = $('.main-panel');
@@ -14,7 +15,11 @@
 
       fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
 
-
+      if (localStorage['color'] == "light") {
+        $('body').addClass('white-content');
+      } else {
+        $('body').removeClass('white-content');
+      }
 
       $('.fixed-plugin a').click(function(event) {
         if ($(this).hasClass('switch-trigger')) {
@@ -94,16 +99,16 @@
 
           white_color = true;
         }
-
-
       });
 
       $('.light-badge').click(function() {
         $('body').addClass('white-content');
+        localStorage['color'] = "light";
       });
 
       $('.dark-badge').click(function() {
         $('body').removeClass('white-content');
+        localStorage['color'] = "dark";
       });
     });
   });
