@@ -4792,8 +4792,20 @@ input[type="button"].btn-block {
   white-space: nowrap;
 }
 
+.navbar-brand-right {
+  display: inline-block;
+  padding-top: 0.406813rem;
+  padding-bottom: 0.406813rem;
+  margin-right: 0.9375rem;
+  font-size: 0.99925rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
 .navbar-brand:hover,
-.navbar-brand:focus {
+.navbar-brand:focus,
+.navbar-brand-right:hover,
+.navbar-brand-right:focus {
   text-decoration: none;
 }
 
@@ -5061,12 +5073,15 @@ input[type="button"].btn-block {
   display: none;
 }
 
-.navbar-light .navbar-brand {
+.navbar-light .navbar-brand,
+.navbar-light .navbar-brand-right {
   color: rgba(34, 42, 66, 0.9);
 }
 
 .navbar-light .navbar-brand:hover,
-.navbar-light .navbar-brand:focus {
+.navbar-light .navbar-brand-right:hover,
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand-right:focus {
   color: rgba(34, 42, 66, 0.9);
 }
 
@@ -5112,12 +5127,15 @@ input[type="button"].btn-block {
   color: rgba(34, 42, 66, 0.9);
 }
 
-.navbar-dark .navbar-brand {
+.navbar-dark .navbar-brand,
+.navbar-dark .navbar-brand-right {
   color: rgba(255, 255, 255, 0.65);
 }
 
 .navbar-dark .navbar-brand:hover,
-.navbar-dark .navbar-brand:focus {
+.navbar-dark .navbar-brand:focus,
+.navbar-dark .navbar-brand-right:hover,
+.navbar-dark .navbar-brand-right:focus {
   color: rgba(255, 255, 255, 0.65);
 }
 
@@ -15833,7 +15851,8 @@ img {
 }
 
 .navbar.bg-white .navbar-text,
-.navbar.bg-white .navbar-brand {
+.navbar.bg-white .navbar-brand,
+.navbar.bg-white .navbar-brand-right {
   color: #222a42;
 }
 
@@ -15875,6 +15894,17 @@ img {
   padding-bottom: .3125rem;
   color: #ffffff;
   margin-left: 17px;
+  margin-top: 3px;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.navbar .navbar-brand-right {
+  float:right;
+  padding-top: .3125rem;
+  padding-bottom: .3125rem;
+  color: #ffffff;
+  margin-left: 170px;
   margin-top: 3px;
   text-transform: uppercase;
   font-size: 1rem;
@@ -16075,7 +16105,8 @@ img {
     margin-top: 5px;
   }
 
-  .navbar .navbar-brand {
+  .navbar .navbar-brand,
+  .navbar .navbar-brand-right {
     margin-left: 20px;
     position: relative;
   }
@@ -17016,7 +17047,7 @@ table.tablesorter thead tr .headerSortDown {
   z-index: 10000;
   border-radius: 8px 0 0 8px;
   text-align: center;
-  top: 40px;
+  top: 100px;
 }
 
 .fixed-plugin li>a,
@@ -18290,7 +18321,8 @@ table.tablesorter thead tr .headerSortDown {
   border-radius: 0.2857rem;
 }
 
-.bd-docs .navbar .navbar-brand {
+.bd-docs .navbar .navbar-brand,
+.bd-docs .navbar .navbar-brand-right {
   position: relative;
 }
 
@@ -19572,7 +19604,8 @@ Copyright (c) 2015 Daniel Eden
   background: #f5f6fa;
 }
 
-.white-content .navbar.navbar-transparent .navbar-brand {
+.white-content .navbar.navbar-transparent .navbar-brand,
+.white-content .navbar.navbar-transparent .navbar-brand-right {
   color: #1d253b;
 }
 
