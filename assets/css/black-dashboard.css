@@ -14577,7 +14577,8 @@ fieldset[disabled] .btn-link.active {
 }
 
 .footer {
-  padding: 24px 0 24px 250px;
+  padding: 0 0 24px 250px;
+  margin-top: -30px;
 }
 
 .footer [class*="container-"] {
