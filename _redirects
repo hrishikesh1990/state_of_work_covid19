@@ -1,0 +1,11 @@
+https://state-of-work-covid19.remote.tools/survey https://state-of-work-covid19.remote.tools/survey.html 301!
+
+https://state-of-work-covid19.remote.tools/who-took-the-survey https://state-of-work-covid19.remote.tools/who-took-the-survey.html 301!
+
+https://state-of-work-covid19.remote.tools/wfh-analysis-of-individuals https://state-of-work-covid19.remote.tools/wfh-analysis-of-individuals.html 301!
+
+https://state-of-work-covid19.remote.tools/wfh-analysis-of-companies https://state-of-work-covid19.remote.tools/wfh-analysis-of-companies.html 301!
+
+https://state-of-work-covid19.netlify.app/* https://state-of-work-covid19.remote.tools/:splat 301!
+
+/* /index.html 200
